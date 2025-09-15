@@ -3,10 +3,14 @@ package com.logistica.services;
 import com.logistica.DAO.ClienteDAO;
 import com.logistica.DTO.ClienteDTO;
 import com.logistica.model.Cliente;
+import com.logistica.view.Mensagem;
+import com.logistica.view.Menu;
 
 public class GerenciadorCliente {
 
     ClienteDAO clienteDAO = new ClienteDAO();
+    Menu menu = new Menu();
+    Mensagem mensagem = new Mensagem();
 
     public void cadastro(ClienteDTO clienteDTO){
 
@@ -20,7 +24,21 @@ public class GerenciadorCliente {
         clienteDAO.novoCliente(cliente);
     }
 
+    public void buscarClienteID(){
+        clienteDAO.buscaCliente(menu.buscaClienteID());
+    }
 
+    public void excluir() {
+        int id = menu.buscaClienteID();
+        if (clienteDAO.buscaCliente(id)){
+            if (menu.confirmaExcluirCliente()){
+                clienteDAO.removeCliente(id);
+            }
+        } else {
+            mensagem.clienteNaoEncontrado();
+        }
+
+    }
 }
 
 

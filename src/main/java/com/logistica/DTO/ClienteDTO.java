@@ -74,13 +74,13 @@ public class ClienteDTO {
 
     @Override
     public String toString() {
-        return "---------------------------------"+
+        return "------------------------------------"+
                 "\nnome= " + nome +
                 "\ncpfCnpj= " + cpfCnpj +
                 "\nendereco= " + endereco +
                 "\ncidade= " + cidade +
                 "\nestado= " + estado +
                 "\ndataCadastro= " + dataCadastro +
-                "---------------------------------";
+                "\n------------------------------------";
     }
 }

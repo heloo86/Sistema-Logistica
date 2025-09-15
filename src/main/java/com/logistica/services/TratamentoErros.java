@@ -9,10 +9,10 @@ public class TratamentoErros {
         int numero = 0;
         try {
            numero = Integer.parseInt(entrada);
+           return numero;
         } catch (NumberFormatException erro ){
           mensagem.erroNumerico();
+          return -1;
         }
-
-        return numero;
     }
 }

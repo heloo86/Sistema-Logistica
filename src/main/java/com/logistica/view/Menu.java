@@ -1,7 +1,6 @@
 package com.logistica.view;
 
 import com.logistica.DTO.ClienteDTO;
-import com.logistica.model.Cliente;
 import com.logistica.services.TratamentoErros;
 
 import java.util.Scanner;
@@ -12,16 +11,18 @@ public class Menu {
     TratamentoErros erro = new TratamentoErros();
 
     public int menuPrincipal(){
-        System.out.println("=============LOGISTICA=============");
+        System.out.println("\n=============LOGISTICA==============");
         System.out.println(" 1 Cadastrar Cliente");
+        System.out.println(" 2 Buscar Cliente");
+        System.out.println(" 3 Excluir Cliente");
+        System.out.println(" 0 Sair");
 
         String entrada = scan.nextLine();
         int saida = erro.verificaInteiro(entrada);
-
         return saida;
     }
 
-    public ClienteDTO menuCadastro(){
+    public ClienteDTO menuCadastroCliente(){
         System.out.print("Nome: ");
         String nome = scan.nextLine();
         System.out.print("CPF/CPJ: ");
@@ -39,11 +40,25 @@ public class Menu {
         return clienteDTO;
     }
 
-    public int  buscaID() {
+    public int buscaClienteID() {
         System.out.println("Digite o ID: ");
         String entrada = scan.nextLine();
         int saida = erro.verificaInteiro(entrada);
 
         return saida;
+    }
+
+    public boolean confirmaExcluirCliente (){
+        System.out.println("\n Deseja mesmo escluir o cliente acima?\n 1 Sim, excluir registro\n 2 Não, manter registro");
+        String entrada = scan.nextLine();
+        int saida = erro.verificaInteiro(entrada);
+
+        boolean excluir = false;
+
+        if (saida == 1){
+            excluir = true;
+        }
+
+        return excluir;
     }
 }
