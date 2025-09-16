@@ -75,12 +75,12 @@ public class Cliente {
     @Override
     public String toString() {
         return "------------------------------------"+
-                "\nnome = " + nome +
-                "\ncpfCnpj = " + cpfCnpj +
-                "\nendereco = " + endereco +
-                "\ncidade = " + cidade +
-                "\nestado = " + estado +
-                "\ndataCadastro = " + dataCadastro +
+                "\nNome = " + nome +
+                "\nCPF/CNPJ = " + cpfCnpj +
+                "\nEndereco = " + endereco +
+                "\nCidade = " + cidade +
+                "\nEstado = " + estado +
+                "\nData de Cadastro = " + dataCadastro +
                 "\n------------------------------------";
     }
 }

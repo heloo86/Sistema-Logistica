@@ -24,6 +24,12 @@ public class GerenciadorMenuPrincipal {
                 gerenciadorCliente.buscarClienteID();
             } case 3 -> {
                 gerenciadorCliente.excluir();
+            } case 4 ->{
+                gerenciadorCliente.cadastro(menu.menuCadastroCliente());
+            } case 5-> {
+                gerenciadorCliente.buscarClienteID();
+            } case 6 -> {
+                gerenciadorCliente.excluir();
             } default -> {
                 return;
             }
