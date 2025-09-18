@@ -23,20 +23,24 @@ public class GerenciadorMotorista {
         motoristaDAO.novoMotorista(motorista);
     }
 
-    public void buscarClienteID(){
-        motoristaDAO.buscaMotorista(menu.buscaClienteID());
+    public void buscarMotoristaID(){
+        motoristaDAO.buscaMotorista(menu.buscaID());
     }
 
     public void excluir() {
-        int id = menu.buscaClienteID();
+        int id = menu.buscaID();
         if (motoristaDAO.buscaMotorista(id)){
-            if (menu.confirmaExcluirCliente()){
+            if (menu.confirmaExcluirMotorista()){
                 motoristaDAO.removeMotorista(id);
             }
         } else {
-            mensagem.clienteNaoEncontrado();
+            mensagem.motoristaNaoEncontrado();
         }
 
+    }
+
+    public void listar(){
+        motoristaDAO.listarMotoristas();
     }
 }
 

@@ -19,6 +19,8 @@ public class Menu {
         System.out.println("\n 4 Cadastrar Motorista");
         System.out.println(" 5 Buscar Motorista");
         System.out.println(" 6 Excluir Motorista");
+        System.out.println("\n 7 Listar Motoristas");
+        System.out.println(" 8 Listar Clientes");
         System.out.println("\n 0 Sair");
 
         String entrada = scan.nextLine();

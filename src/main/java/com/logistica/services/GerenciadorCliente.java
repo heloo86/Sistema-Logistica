@@ -25,11 +25,11 @@ public class GerenciadorCliente {
     }
 
     public void buscarClienteID(){
-        clienteDAO.buscaCliente(menu.buscaClienteID());
+        clienteDAO.buscaCliente(menu.buscaID());
     }
 
     public void excluir() {
-        int id = menu.buscaClienteID();
+        int id = menu.buscaID();
         if (clienteDAO.buscaCliente(id)){
             if (menu.confirmaExcluirCliente()){
                 clienteDAO.removeCliente(id);
@@ -38,6 +38,10 @@ public class GerenciadorCliente {
             mensagem.clienteNaoEncontrado();
         }
 
+    }
+
+    public void listar() {
+        clienteDAO.listarClientes();
     }
 }
 

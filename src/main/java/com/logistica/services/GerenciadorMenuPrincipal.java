@@ -9,6 +9,7 @@ public class GerenciadorMenuPrincipal {
 
     Menu menu = new Menu();
     GerenciadorCliente gerenciadorCliente = new GerenciadorCliente();
+    GerenciadorMotorista gerenciadorMotorista = new GerenciadorMotorista();
     Mensagem mensagem = new Mensagem();
     TratamentoErros erro = new TratamentoErros();
 
@@ -25,12 +26,16 @@ public class GerenciadorMenuPrincipal {
             } case 3 -> {
                 gerenciadorCliente.excluir();
             } case 4 ->{
-                gerenciadorCliente.cadastro(menu.menuCadastroCliente());
+                gerenciadorMotorista.cadastro(menu.menuCadastroMotorista());
             } case 5-> {
-                gerenciadorCliente.buscarClienteID();
+                gerenciadorMotorista.buscarMotoristaID();
             } case 6 -> {
-                gerenciadorCliente.excluir();
-            } default -> {
+                gerenciadorMotorista.excluir();
+            } case 7 ->{
+                gerenciadorMotorista.listar();
+            } case 8 -> {
+                gerenciadorCliente.listar();
+            }default -> {
                 return;
             }
         }

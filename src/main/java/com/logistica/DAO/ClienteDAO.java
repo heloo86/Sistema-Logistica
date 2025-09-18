@@ -89,4 +89,29 @@ public class ClienteDAO {
 
         return encontrado;
     }
+
+    public void listarClientes(){
+        String query = "SELECT id, nome, cpf_cnpj, endereco, cidade, estado, data_cadastro FROM cliente";
+
+        try (Connection connection = Conexao.conectar();
+             PreparedStatement statement = connection.prepareStatement(query);
+             ResultSet resultSet = statement.executeQuery()){
+            while (resultSet.next()){
+
+                int id = resultSet.getInt("id");
+                String nome = resultSet.getString("nome");
+                String cpfCnpj = resultSet.getString("cpf_cnpj");
+                String endereco = resultSet.getString("endereco");
+                String cidade = resultSet.getString("cidade");
+                String estado = resultSet.getString("estado");
+                Date dataCadastro = resultSet.getDate("data_cadastro");
+
+                System.out.println("ID: "+ id + " | Nome: " +nome+ " | CPF/CNPJ = "+ cpfCnpj + " | Endereço: " +endereco+ " | Cidade: "+cidade+" | Estado: "+estado+" | Data cadastro: " +dataCadastro);
+            }
+
+
+        } catch (SQLException e){
+            System.err.println("Erro ao acessar banco de dados");
+        }
+    }
 }

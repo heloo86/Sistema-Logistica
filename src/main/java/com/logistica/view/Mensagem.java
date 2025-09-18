@@ -30,4 +30,8 @@ public class Mensagem {
     public void clienteNaoEncontrado() {
         System.out.println(" Cliente não encontrado");
     }
+
+    public void motoristaNaoEncontrado() {
+        System.out.println(" Motorista não encontrado");
+    }
 }

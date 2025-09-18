@@ -5,11 +5,12 @@ import java.time.LocalDateTime;
 public class MotoristaDTO {
     private String nome;
     private String cnh;
-    private  String veiculo;
+    private String veiculo;
     private String cidadeBase;
     private LocalDateTime dataCadastro;
 
     public MotoristaDTO(String nome, String cnh, String veiculo, String cidadeBase) {
+        this();
         this.nome = nome;
         this.cnh = cnh;
         this.veiculo = veiculo;
@@ -17,10 +18,7 @@ public class MotoristaDTO {
     }
 
     public MotoristaDTO() {
-        this.nome = "";
-        this.cnh = "";
-        this.veiculo = "";
-        this.cidadeBase = "";
+        this.dataCadastro = LocalDateTime.now();
     }
 
     public String getNome() {
@@ -70,7 +68,7 @@ public class MotoristaDTO {
                 "\nCNH = " + cnh +
                 "\nCidade base = " + cidadeBase +
                 "\nVeiculo = " + veiculo +
-                "\nCata de Cadastro = " + dataCadastro +
+                "\nData de Cadastro = " + dataCadastro +
                 "\n------------------------------------";
     }
 }

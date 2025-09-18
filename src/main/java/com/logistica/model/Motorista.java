@@ -9,18 +9,16 @@ public class Motorista {
     private String cidadeBase;
     private LocalDateTime dataCadastro;
 
+    public Motorista() {
+        this.dataCadastro = LocalDateTime.now();
+    }
+
     public Motorista(String nome, String cnh, String veiculo, String cidadeBase) {
+        this();
         this.nome = nome;
         this.cnh = cnh;
         this.veiculo = veiculo;
         this.cidadeBase = cidadeBase;
-    }
-
-    public Motorista() {
-        this.nome = "";
-        this.cnh = "";
-        this.veiculo = "";
-        this.cidadeBase = "";
     }
 
     public String getNome() {
