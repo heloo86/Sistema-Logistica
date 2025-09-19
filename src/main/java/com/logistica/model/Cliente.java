@@ -3,7 +3,7 @@ package com.logistica.model;
 import java.time.LocalDateTime;
 
 public class Cliente {
-
+    private int id;
     private String nome;
     private String cpfCnpj;
     private String endereco;
@@ -22,6 +22,24 @@ public class Cliente {
         this.endereco = endereco;
         this.cidade = cidade;
         this.estado = estado;
+    }
+
+    public Cliente(int id, String nome, String cpfCnpj, String endereco, String cidade, String estado, LocalDateTime dataCadastro) {
+        this.id = id;
+        this.nome = nome;
+        this.cpfCnpj = cpfCnpj;
+        this.endereco = endereco;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.dataCadastro = dataCadastro;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

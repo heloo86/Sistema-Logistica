@@ -2,7 +2,6 @@ package com.logistica;
 
 
 import com.logistica.services.Conexao;
-import com.logistica.services.GerenciadorCliente;
 import com.logistica.services.GerenciadorMenuPrincipal;
 import com.logistica.view.Menu;
 

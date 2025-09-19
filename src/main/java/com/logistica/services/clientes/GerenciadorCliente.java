@@ -1,4 +1,4 @@
-package com.logistica.services;
+package com.logistica.services.clientes;
 
 import com.logistica.DAO.ClienteDAO;
 import com.logistica.DTO.ClienteDTO;
@@ -30,7 +30,7 @@ public class GerenciadorCliente {
 
     public void excluir() {
         int id = menu.buscaID();
-        if (clienteDAO.buscaCliente(id)){
+        if (clienteDAO.buscaCliente(id)!=null){
             if (menu.confirmaExcluirCliente()){
                 clienteDAO.removeCliente(id);
             }

@@ -1,4 +1,4 @@
-package com.logistica.services;
+package com.logistica.services.motorista;
 
 import com.logistica.DAO.MotoristaDAO;
 import com.logistica.DTO.MotoristaDTO;

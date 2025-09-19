@@ -28,6 +28,8 @@ public class Menu {
         return saida;
     }
 
+    // BUSCA --------------------------------------------------------------------------------------------------
+
     public int buscaID() {
         System.out.println("Digite o ID: ");
         String entrada = scan.nextLine();

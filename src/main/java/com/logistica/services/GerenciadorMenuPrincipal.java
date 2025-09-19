@@ -1,7 +1,7 @@
 package com.logistica.services;
 
-import com.logistica.DAO.ClienteDAO;
-import com.logistica.Main;
+import com.logistica.services.clientes.GerenciadorCliente;
+import com.logistica.services.motorista.GerenciadorMotorista;
 import com.logistica.view.Mensagem;
 import com.logistica.view.Menu;
 

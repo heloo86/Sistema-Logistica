@@ -50,7 +50,7 @@ public class ClienteDAO {
         }
     }
 
-    public boolean buscaCliente (int id){
+    public Cliente buscaCliente (int id){
 
         boolean encontrado = false;
         String query = "SELECT id, nome, cpf_cnpj, endereco, cidade, estado, data_cadastro FROM cliente WHERE id = ?";
@@ -62,17 +62,16 @@ public class ClienteDAO {
 
             try (ResultSet resultSet = statement.executeQuery()){
                 if (resultSet.next()){
-                    System.out.println("ID: " + resultSet.getInt("id"));
-                    System.out.println("Nome: " + resultSet.getString("nome"));
-                    System.out.println("CPF/CNPJ: " + resultSet.getString("cpf_cnpj"));
-                    System.out.println("Endereço: " + resultSet.getString("endereco"));
-                    System.out.println("Cidade: " + resultSet.getString("cidade"));
-                    System.out.println("Estado: " + resultSet.getString("estado"));
-
+                    int clienteId = resultSet.getInt("id");
+                    String nome = resultSet.getString("nome");
+                    String cpfCnpj = resultSet.getString("cpf_cnpj");
+                    String endereco = resultSet.getString("endereco");
+                    String cidade = resultSet.getString("cidade");
+                    String estado = resultSet.getString("estado");
                     Date dataCadastro = resultSet.getDate("data_cadastro");
-                    System.out.println("Data de cadastro: " + dataCadastro);
 
-                    encontrado = true;
+                    Cliente cliente = new Cliente();
+                    return cliente;
 
                 } else {
                     System.out.println("Cliente com id " + id + " não encontrado");
@@ -84,10 +83,8 @@ public class ClienteDAO {
 
         } catch (SQLException e) {
             System.err.println("Erro ao buscar e exibir cliente: " + e.getMessage());
-            throw new RuntimeException("Erro ao procurar cliente");
+            return null;
         }
-
-        return encontrado;
     }
 
     public void listarClientes(){
